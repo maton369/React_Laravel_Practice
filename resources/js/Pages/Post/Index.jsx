@@ -1,5 +1,6 @@
 import React from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
+import { Link } from "@inertiajs/react";
 
 const Index = (props) => {
     const { posts } = props;
@@ -13,12 +14,14 @@ const Index = (props) => {
             <div className="p-12">
                 <h1>Blog Name</h1>
                 {
-                    posts.map((post) => {
+                    posts.map((post) => (
                         <div key={post.id}>
-                            <h2>{post.title}</h2>
-                            <p>{post.title}</p>
+                            <h2>
+                                <Link href={`/posts/${post.id}`}>{post.title}</Link>
+                            </h2>
+                            <p>{post.body}</p>
                         </div>
-                    })
+                    ))
                 }
 
             </div>
