@@ -13,6 +13,7 @@ const Index = (props) => {
         }>
             <div className="p-12">
                 <h1>Blog Name</h1>
+                <Link href="/posts/create">Create</Link>
                 {
                     posts.map((post) => (
                         <div key={post.id}>
